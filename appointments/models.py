@@ -4,7 +4,7 @@ from business.models import *
 
 class TimeSlot(models.Model):
     business=models.ForeignKey(Business,on_delete=models.CASCADE)
-    date=models.DateFieldField()
+    date=models.DateField()
     start_time=models.TimeField()
     end_time=models.TimeField()
     is_available=models.BooleanField(default=True)

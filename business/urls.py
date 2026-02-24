@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import *
+from .views import BusinessListCreateView, BusinessDetailView, ServiceListCreateView, ServiceDetailView
 
-
-urlspatterns=[
-    path("client/",BusinessListCreateView.as_view()),
-    path("client/<int:pk>/",BusinessDetailView.as_view()),
-    path("",ServiceListCreateView.as_view()),
-    path("<int:pk>/", ServiceDetailView.as_view()),
+urlpatterns = [
+    path("", BusinessListCreateView.as_view()),
+    path("<int:pk>/", BusinessDetailView.as_view()),
+    path("services/", ServiceListCreateView.as_view()),
+    path("services/<int:pk>/", ServiceDetailView.as_view()),
 ]
