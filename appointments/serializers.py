@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import TimeSlot, Appointments
+from .models import TimeSlot, Appointment,Customer
 
 
 class TimeSlotSerializer(serializers.ModelSerializer):
@@ -11,6 +11,13 @@ class TimeSlotSerializer(serializers.ModelSerializer):
 class AppointmentSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = Appointments
+        model = Appointment
         fields = "__all__"
-        read_only_fields = ("status","created_at")
+        read_only_fields = ("status", "created_at", "business", "service", "slot")
+
+class CustomerSerializer(serializers.ModelSerializer):
+   
+    class Meta:
+        model = Customer
+        fields = "__all__"
+        read_only_fields = ("business",)

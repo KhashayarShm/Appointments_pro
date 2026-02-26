@@ -2,7 +2,7 @@ from django.db import models
 from appointments.models import *
 # Create your models here.
 class Payments(models.Model):
-    appointment=models.ForeignKey(Appointments,on_delete=models.CASCADE)
+    appointment=models.ForeignKey(Appointment,on_delete=models.CASCADE)
     amount=models.PositiveIntegerField()
     status=models.CharField(max_length=20,default='pending')
     transaction_id=models.CharField(max_length=200,blank=True)
